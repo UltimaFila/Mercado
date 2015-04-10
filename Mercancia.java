@@ -16,6 +16,11 @@ public class Mercancia {
 
 	}
 
+	public String getTipo() {
+		return (tipo);
+
+	}
+
 	public float getKgs() {
 		return (kgs);
 	}

@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Scanner;
+
 
 public class Comerciante {
 
@@ -27,20 +29,46 @@ public class Comerciante {
 		return (tipoNegocio);
 	}
 
-	public void String setNombre(String nombre_nuevo) {
-		this.nombre = nombre_nuevo;
+	public void setNombre(String nombre_nuevo){
+		this.nombre=nombre_nuevo;
 	}
 	
-	public void String setTipoNegocio() {
+	public String setTipoNegocio() {
 		return (tipoNegocio);
 	}
 	
-	
-	
-	
 
-	private void Buscar() {
 
+	public static void añadirMercancia(){
+	
+		Scanner sc = new Scanner(System.in);
+		String cogerMercancia = new String();
+		Mercancia patata = new Mercancia(cogerMercancia);
+		
+		System.out.println("Introduzca tripo de mercancía:");
+		cogerMercancia = sc.nextLine();
+		System.out.println("Introduzca cantidad en Kgs:");
+		patata.setKgs(sc.nextFloat());
+		sc.nextLine();
+		System.out.println("Introduzca precio/kg:");
+		patata.setPreciokg(sc.nextFloat());
+		
+		System.out.println(patata.getKgs());
+		System.out.println(patata.getTipo());
+		System.out.println(patata.getPreciokg());
+		
+	
+	}
+		
+	public static void insertarMercancia() {
+//		mercancias.
+		
 	}
 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		añadirMercancia();
+	
+	}
+	
 }
