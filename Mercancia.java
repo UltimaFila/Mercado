@@ -8,13 +8,15 @@ public class Mercancia {
 		this.tipo = tipo_nuevo;
 
 	}
+	
 
-	public Mercancia(String tipo_nuevo, float kgs_nuevo, float preciokg_nuevo) {
-		this.tipo = tipo_nuevo;
-		this.kgs = kgs_nuevo;
-		this.preciokg = preciokg_nuevo;
 
-	}
+//	public Mercancia(String tipo_nuevo, float kgs_nuevo, float preciokg_nuevo) {
+//		this.tipo = tipo_nuevo;
+//		this.kgs = kgs_nuevo;
+//		this.preciokg = preciokg_nuevo;
+//
+//	}
 
 	public String getTipo() {
 		return (tipo);
