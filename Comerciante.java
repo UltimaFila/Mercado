@@ -6,12 +6,21 @@ public class Comerciante {
 	private String nombre;
 	private String CIF;
 	private String tipoNegocio;
-	private static ArrayList<Mercancia> mercancias = new ArrayList<Mercancia>();
+	private Mercancia mercancia;
+	private ArrayList<Mercancia> mercancias = new ArrayList<Mercancia>();
 
-	public Comerciante(String nombre_nuevo, String CIF_nuevo) {
-		this.nombre = nombre_nuevo;
-		this.CIF = CIF_nuevo;
-
+	
+	
+	public Comerciante() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Introduzca nombre del comerciante:");
+		nombre = sc.nextLine();
+		System.out.println("Introduzca CIF del comerciante:");
+		CIF = sc.nextLine();
+		System.out.println("Introduzca tipo de negocio:");
+		tipoNegocio = sc.nextLine();
+	
 	}
 
 	public String getCIF() {
@@ -33,11 +42,16 @@ public class Comerciante {
 	public String setTipoNegocio() {
 		return (tipoNegocio);
 	}
+	
+	public String toString() {
+		
+		return "Nombre del comerciante: " + this.nombre + " " + this.CIF + " " + this.tipoNegocio;
+	}
 
 	public void añadirMercancia() {
 
 		boolean existe = false;
-		Mercancia mercancia = new Mercancia();
+		mercancia = new Mercancia();
 
 		for (int i = 0; i < mercancias.size(); i++) {
 			if (mercancias.get(i).getTipo().equals(mercancia.getTipo())) {
@@ -72,7 +86,6 @@ public class Comerciante {
 	
 	public void mostrarMercancia() {
 
-		// CLARO QUE SÍ
 
 		for (int i = 0; i < mercancias.size(); i++) {
 			System.out.println(mercancias.get(i));
@@ -88,10 +101,12 @@ public class Comerciante {
 		Scanner sc = new Scanner(System.in);
 		do {
 			System.out
-					.println("Bienvenido al mercaodrrrrrrrrrrrrrrrrrrrlfdfsff\n\n");
+					.println("Bienvenido al mercaodrrrrrrrrrrrrrrrrrrrlfdfsff\n\n" + nombre);
 			System.out.println("1.- (A)ñadir mercancia");
 			System.out.println("2.- (E)liminar mercancia");
 			System.out.println("3.- (M)ostrar mercancia");
+			System.out.println("4.- (V)olver");
+			System.out.println("5.- (S)alir");
 
 			opc_menu = sc.next().charAt(0);
 			switch (opc_menu) {
@@ -108,9 +123,15 @@ public class Comerciante {
 				break;
 			}
 			case '3':
+			case 'm':
+			case 'M': {
+				mostrarMercancia();
+				break;
+			}
+			case '4':
 			case 'v':
 			case 'V': {
-				mostrarMercancia();
+				MiMercado.menuLogin();
 				break;
 			}
 
@@ -118,14 +139,6 @@ public class Comerciante {
 		} while (opc_menu != '0');
 		sc.close();
 	}
-	// public static void insertarMercancia() {
-	// mercancias.add(patata);
-	// System.out.println(patata.tipo + " " + patata.kgs + " "
-	// + patata.preciokg);
-	//
-	// }
-
 	
-	// insertarMercancia();
 
 }
